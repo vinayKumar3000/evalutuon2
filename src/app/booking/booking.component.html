@@ -1,7 +1,20 @@
-<p>booking id - {{ id }}</p>
-<p>username - {{ username }}</p>
-<p>roomType - {{ roomType }}</p>
-<p>gender - {{ gender }}</p>
-<p>createdAt - {{ createdAt }}</p>
-
-<button (click)="deleteBooking()">Delete</button>
+<div class="container">
+  <div class="card" style="width: 18rem">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">booking id - {{ id }}</li>
+      <li class="list-group-item">username - {{ username }}</li>
+      <li class="list-group-item">roomType - {{ roomType }}</li>
+      <li class="list-group-item">gender - {{ gender }}</li>
+      <li class="list-group-item">createdAt - {{ createdAt }}</li>
+      <li class="list-group-item">price - {{ price }}</li>
+    </ul>
+    <img
+      class="imgstyling m-auto mb-0"
+      src="https://img.icons8.com/carbon-copy/100/000000/checked-checkbox.png"
+    /><br />
+    <h2 class="tyfyo m-auto">Thank You For Your Order!</h2>
+    <button class="btn btn-outline-danger mb-2" (click)="deleteBooking()">
+      Cancel Order
+    </button>
+  </div>
+</div>

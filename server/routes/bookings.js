@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const Booking = require("../models/Booking");
 
-//post POST
+//Booking POST
 router.post("/", async (req, res) => {
   try {
     const newBooking = new Booking(req.body);
@@ -34,23 +34,6 @@ router.get("/:id", async (req, res) => {
   try {
     const booking = await Booking.findById(req.params.id);
     res.status(200).json(booking);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-//GET ALL Bookings
-router.get("/", async (req, res) => {
-  const username = req.query.user;
-  console.log(username);
-  try {
-    let bookings;
-    if (username) {
-      bookings = await Booking.find({ username });
-    } else {
-      bookings = await Booking.find();
-    }
-    res.status(200).json(bookings);
   } catch (err) {
     res.status(500).json(err);
   }

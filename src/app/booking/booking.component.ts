@@ -12,10 +12,11 @@ export class BookingComponent implements OnInit {
   username: any;
   roomType: any;
   gender: any;
-  res:any;
+  res: any;
   id: any;
   routeState: any;
   createdAt: any;
+  price: any;
   constructor(
     private router: Router,
     private hostelDetails: HostelDetailService
@@ -28,12 +29,15 @@ export class BookingComponent implements OnInit {
         this.gender = this.routeState.gender;
         this.id = this.routeState.id;
         this.createdAt = this.routeState.createdAt;
+        this.price = this.routeState.price;
       }
     }
   }
 
   deleteBooking() {
-    this.hostelDetails.deleteBooking(this.id).subscribe((res)=>(this.res=res));
+    this.hostelDetails
+      .deleteBooking(this.id)
+      .subscribe((res) => (this.res = res));
     this.router.navigate(['dashboard']);
   }
 

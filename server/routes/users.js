@@ -6,24 +6,20 @@ const bcrypt = require("bcrypt");
 
 //DELETE
 router.delete("/:id", async (req, res) => {
-  if (req.body.userId === req.params.id) {
+  try {
+    const user = await User.findById(req.params.id);
     try {
-      const user = await User.findById(req.params.id);
-      try {
-        if (user) {
-          await User.findByIdAndDelete(req.params.id);
-          res.status(200).json("User has been deleted...");
-        } else {
-          res.status(400).json("cannot delete user");
-        }
-      } catch (err) {
-        res.status(500).json(err);
+      if (user) {
+        await User.findByIdAndDelete(req.params.id);
+        res.status(200).json("User has been deleted...");
+      } else {
+        res.status(400).json("cannot delete user");
       }
     } catch (err) {
       res.status(500).json(err);
     }
-  } else {
-    res.status(400).json("You cannot delete account");
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 

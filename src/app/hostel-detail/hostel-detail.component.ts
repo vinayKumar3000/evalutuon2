@@ -16,18 +16,10 @@ import { HostelDetailService } from './hostel-detail.service';
 export class HostelDetailComponent implements OnInit {
   user: User;
   roomBook: Booking;
-  prices: Prices;
   booking: any;
   room: any[];
+  prices: Prices;
   userSubscription: Subscription;
-  availability: Availability = {
-    boysStandardRooms: 0, // 12
-    boysDeluxeRooms: 0, // 15
-    boysSuperDeluxeRooms: 0, // 10
-    girlsStandardRooms: 0, // 13
-    girlsDeluxeRooms: 0, // 15
-    girlsSuperDeluxeRooms: 0, // 11
-  };
 
   constructor(
     private authService: AuthService,
@@ -49,6 +41,7 @@ export class HostelDetailComponent implements OnInit {
         gender: this.booking.gender,
         id: this.booking._id,
         createdAt: this.booking.createdAt,
+        price: this.booking.price,
       },
     });
   }
@@ -62,6 +55,7 @@ export class HostelDetailComponent implements OnInit {
         username: this.user.username,
         roomType: 'Super Deluxe',
         gender: 'female',
+        price: 500,
       };
       this.hostelDetails.booking(this.roomBook).subscribe(
         (booking) => {
@@ -83,6 +77,7 @@ export class HostelDetailComponent implements OnInit {
         username: this.user.username,
         roomType: 'Super Deluxe',
         gender: 'male',
+        price: 500,
       };
       this.hostelDetails.booking(this.roomBook).subscribe(
         (booking) => {
@@ -104,6 +99,7 @@ export class HostelDetailComponent implements OnInit {
         username: this.user.username,
         roomType: 'Deluxe',
         gender: 'female',
+        price: 300,
       };
       this.hostelDetails.booking(this.roomBook).subscribe(
         (booking) => {
@@ -125,6 +121,7 @@ export class HostelDetailComponent implements OnInit {
         username: this.user.username,
         roomType: 'Deluxe',
         gender: 'male',
+        price: 300,
       };
       this.hostelDetails.booking(this.roomBook).subscribe(
         (booking) => {
@@ -146,6 +143,7 @@ export class HostelDetailComponent implements OnInit {
         username: this.user.username,
         roomType: 'Standard',
         gender: 'female',
+        price: 200,
       };
       this.hostelDetails.booking(this.roomBook).subscribe(
         (booking) => {
@@ -167,6 +165,7 @@ export class HostelDetailComponent implements OnInit {
         username: this.user.username,
         roomType: 'Standard',
         gender: 'male',
+        price: 200,
       };
       this.hostelDetails.booking(this.roomBook).subscribe(
         (booking) => {

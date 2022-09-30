@@ -1,0 +1,10 @@
+.imgstyling {
+  width: 30%;
+  height: 30%;
+}
+.container {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
