@@ -4,7 +4,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { AuthModule } from './auth/auth.module';
 import { HostelDetailComponent } from './hostel-detail/hostel-detail.component';
-import { ContactUsComponent } from './contact-us/contact-us.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProfileComponent } from './profile/profile.component';
 import { BookingComponent } from './booking/booking.component';
@@ -33,11 +32,6 @@ const routes: Routes = [
     path: 'hostel-detail',
     pathMatch: 'full',
     component: HostelDetailComponent,
-  },
-  {
-    path: 'contactUs',
-    pathMatch: 'full',
-    component: ContactUsComponent,
   },
   {
     path: 'profile',

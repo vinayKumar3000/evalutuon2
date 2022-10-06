@@ -9,7 +9,6 @@ import { HeaderComponent } from './header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HostelDetailComponent } from './hostel-detail/hostel-detail.component';
-import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FooterComponent } from './footer/footer.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -24,7 +23,6 @@ import { BookingComponent } from './booking/booking.component';
     DashboardComponent,
     HeaderComponent,
     HostelDetailComponent,
-    ContactUsComponent,
     FooterComponent,
     NotFoundComponent,
     ProfileComponent,

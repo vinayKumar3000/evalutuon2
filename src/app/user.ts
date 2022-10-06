@@ -5,6 +5,6 @@ export interface User {
   lastName: string;
   mobileNumber: string;
   email: string;
-  newPassword: string;
+  password: string;
   role: string;
 }
